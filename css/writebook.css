@@ -4,6 +4,25 @@ body {
   height: 100%;
   width: 100%;
 }
+body,p,div,span{
+  font-family: 'Century Gothic';
+}
+/* 设置滚动条 */
+/*定义滚动条高宽及背景
+ 高宽分别对应横竖滚动条的尺寸*/
+ ::-webkit-scrollbar
+ {
+     width:5px;
+     height:5px;
+     background-color:#ffffff;
+ }
+ /*定义滑块
+  内阴影+圆角*/
+ ::-webkit-scrollbar-thumb
+ {
+     -webkit-box-shadow:inset 0 0 6px rgba(0,0,0,.3);
+     background-color:#2E2E2E;
+ }
 
 /* 首页 */
 .index-outer{
@@ -43,13 +62,18 @@ body {
   justify-content: center;
 }
 .post-content{
-  max-width: 900px;
+  max-width: 800px;
 }
  
 .base{
   border-bottom: 1px dashed #ddd;
   padding: 20px;
-
+  transition: .25s;
+  font-weight: 580;
+  font-size: 1.1em;
+}
+.base:hover{
+  background-color: #EEEEEE;
 }
 .base>a{
   color: #333;
@@ -60,4 +84,103 @@ body {
 }
 .me>a{
   color: #333;
+}
+/* 文章主体 */
+.post-content{
+  line-height: 1.8em;
+  margin-top: 70px;
+  margin-bottom: 100px;
+}
+.post-fore{
+  text-align: center;
+  padding-bottom: 20px;
+  border-bottom: 1px dashed #ddd;
+  margin-bottom: 40px;
+}
+.post-title{
+  font-size: 3.5em;
+  padding-bottom: 20px;
+}
+
+
+blockquote{
+  margin: 0;
+  padding: 0;
+}
+
+code,kbd,pre,samp{
+  font-size:1em
+}
+code{ 
+  /* 待考虑 */
+  color: #990000;
+  font-size: 1em;
+  font-weight: normal;
+  font-family: 'Century Gothic';
+}
+
+pre>code{
+  background: none;
+  font-size: 1em;
+}
+.highlight code {
+    display: block;
+}
+
+.math * {
+    color: inherit !important;
+}
+
+code.highlighter-rouge * {
+  color: initial !important;
+}
+
+blockquote {
+  padding: 1em;
+  border-left: 5px solid #7A7A7A;
+  background: #F7F7F7;
+}
+.hljs{
+  overflow: scroll;
+}
+img {
+	width: auto;
+  max-width: 90%;
+  margin: 0 auto;
+  display: block;
+}
+
+table {
+  width: 100%;
+}
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td,
+table > tfoot > tr > th,
+table > tfoot > tr > td {
+  padding: 12px;
+  line-height: 1.2;
+  vertical-align: top;
+  border-top: 1px solid #333;
+}
+table > thead > tr > th {
+  vertical-align: bottom;
+  border-bottom: 2px solid #333;
+}
+table > caption + thead > tr:first-child > th,
+table > caption + thead > tr:first-child > td,
+table > colgroup + thead > tr:first-child > th,
+table > colgroup + thead > tr:first-child > td,
+table > thead:first-child > tr:first-child > th,
+table > thead:first-child > tr:first-child > td {
+  border-top: 0;
+}
+table > tbody + tbody {
+  border-top: 2px solid #333;
+}
+
+video {
+  display: block;
+  margin: auto;
 }

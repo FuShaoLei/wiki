@@ -1,0 +1,130 @@
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>算法-概述 [ Hexo ]</title>
+  
+<link rel="stylesheet" href="/wiki/css/writebook.css">
+
+
+  
+    
+      
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.1.1/styles/vs2015.css">
+
+    
+  
+<meta name="generator" content="Hexo 4.2.1"></head>
+<body>
+
+<div class="post-layout">
+  <div class="post-side">
+ <!-- <div class="post-categories">
+   算法
+ </div> -->
+  
+<div class="post-relative">
+  <a  href="/wiki/" >
+    <div class="base">
+      首页
+    </div>
+  </a>
+  
+  
+    
+      <a  href="/wiki/algorithm-0/" >
+      <div class="me base">
+        算法-概述
+      </div>
+    </a>
+    
+  
+
+  
+    
+      <a  href="/wiki/algorithm-1/" >
+      <div class="base">
+        排序算法
+      </div>
+    </a>
+    
+  
+
+  
+    
+  
+
+  
+    
+  
+
+</div>
+
+  </div>
+
+
+<div class="post-main">
+  <div class="post-content">
+    <div class="post-fore">
+      <h1 class="post-title">算法-概述</h1>
+      <section class="post-meta">
+        <time datetime="2020-06-22T15:08:04.000Z">2020年06月22日</time> by <span>Sorryfu</span>
+      </section>
+    </div>
+      
+  <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>算法是指解题方案的准确而完整的描述，是一系列解决问题的清晰指令，算法代表着用系统的方法描述解决问题的策略机制。</p>
+<blockquote>
+<p>算法五个重要的特征：</p>
+<ol>
+<li>有穷性</li>
+<li>确定性(无二义)</li>
+<li>可(能)行性 </li>
+<li>输入</li>
+<li>输出 </li>
+</ol>
+</blockquote>
+<p>一个算法的评价主要从<strong>时间复杂度</strong>和<strong>空间复杂度</strong>来考虑，</p>
+<h2 id="时间复杂度"><a href="#时间复杂度" class="headerlink" title="时间复杂度"></a>时间复杂度</h2><p>我们把问题的规模称为n，（这个n代表着要处理的数量）</p>
+<blockquote>
+<p>一般情况下，算法中基本操作重复执行的次数是问题规模  n  的某个函数 f(n) ，算法的时间度量记作  T(n)=O(f(n))  表示随着问题规模  n  的增大，算法执行时间的增长率和  f(n)  的增长率相同，称作算法的渐进时间复杂度，简称时间复杂度。</p>
+</blockquote>
+<p>比如冒泡排序：</p>
+<pre><code class="java">  /**
+     * 冒泡排序
+     */
+    public static void bubble_sort(int array[]){
+        System.out.println(&quot;冒泡排序开始&quot;);
+        for(int i=0;i&lt;array.length-1;i++){//在这里会循环n次
+            for(int j=i+1;j&lt;array.length;j++){//在这里又会循环n次
+                if(array[j]&gt;array[i]){
+                    int temp=array[j];
+                    array[j]=array[i];
+                    array[i]=temp;
+                }
+            }
+        }//所以时间复杂度就是T(n)=n^2啦
+        System.out.println(Arrays.toString(array));
+        System.out.println(&quot;冒泡排序结束&quot;);
+    }</code></pre>
+<h2 id="空间复杂度"><a href="#空间复杂度" class="headerlink" title="空间复杂度"></a>空间复杂度</h2><p>空间复杂度是指算法占用内存空间的值</p>
+
+  </div>
+
+</div>
+</div>
+
+
+
+
+    
+      
+<script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.1/build/highlight.min.js"></script>
+
+      <script>hljs.initHighlightingOnLoad();</script>
+    
+  
+</body>
+</html>

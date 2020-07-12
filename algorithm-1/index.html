@@ -1,0 +1,189 @@
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>排序算法 [ Hexo ]</title>
+  
+<link rel="stylesheet" href="/wiki/css/writebook.css">
+
+
+  
+    
+      
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.1.1/styles/vs2015.css">
+
+    
+  
+<meta name="generator" content="Hexo 4.2.1"></head>
+<body>
+
+<div class="post-layout">
+  <div class="post-side">
+ <!-- <div class="post-categories">
+   算法
+ </div> -->
+  
+<div class="post-relative">
+  <a  href="/wiki/" >
+    <div class="base">
+      首页
+    </div>
+  </a>
+  
+  
+    
+      <a  href="/wiki/algorithm-0/" >
+      <div class="base">
+        算法-概述
+      </div>
+    </a>
+    
+  
+
+  
+    
+      <a  href="/wiki/algorithm-1/" >
+      <div class="me base">
+        排序算法
+      </div>
+    </a>
+    
+  
+
+  
+    
+  
+
+  
+    
+  
+
+</div>
+
+  </div>
+
+
+<div class="post-main">
+  <div class="post-content">
+    <div class="post-fore">
+      <h1 class="post-title">排序算法</h1>
+      <section class="post-meta">
+        <time datetime="2020-06-22T15:08:09.000Z">2020年06月22日</time> by <span>Sorryfu</span>
+      </section>
+    </div>
+      
+  <h2 id="一，冒泡排序"><a href="#一，冒泡排序" class="headerlink" title="一，冒泡排序"></a>一，冒泡排序</h2><h3 id="思想"><a href="#思想" class="headerlink" title="思想"></a>思想</h3><p><strong>依次比较两个相邻的元素，如果他们的顺序错误就把他们的值互换</strong></p>
+<h3 id="示例代码"><a href="#示例代码" class="headerlink" title="示例代码"></a>示例代码</h3><ol>
+<li>两层循环</li>
+<li>依据需求比较互换</li>
+</ol>
+<pre><code class="java">    /**
+     * 冒泡排序
+     */
+    public static void bubble_sort(int array[]){
+        System.out.println(&quot;冒泡排序开始&quot;);
+        for(int i=0;i&lt;array.length-1;i++){
+            for(int j=i+1;j&lt;array.length;j++){
+                if(array[j]&gt;array[i]){
+                    int temp=array[j];
+                    array[j]=array[i];
+                    array[i]=temp;
+                }
+            }
+        }
+        System.out.println(Arrays.toString(array));
+        System.out.println(&quot;冒泡排序结束&quot;);
+    }</code></pre>
+<h2 id="二，选择排序"><a href="#二，选择排序" class="headerlink" title="二，选择排序"></a>二，选择排序</h2><h3 id="思想-1"><a href="#思想-1" class="headerlink" title="思想"></a>思想</h3><p><strong>先假设比如第一个元素是最大的（或最小），然后去循环，如果有比它更大的元素，则互换</strong></p>
+<h3 id="示例代码-1"><a href="#示例代码-1" class="headerlink" title="示例代码"></a>示例代码</h3><ol>
+<li>假设最值</li>
+<li>比较互换</li>
+</ol>
+<pre><code class="java">    /**
+     * 选择排序
+     */
+    public static void select_sort(int array[]){
+        System.out.println(&quot;选择排序开始&quot;);
+        int max;
+        for(int i=0;i&lt;array.length;i++){
+            max=i;
+            for (int j=i+1;j&lt;array.length;j++){
+                if (array[j]&gt;array[max]){
+                    max=j;
+                }
+            }
+            int temp=array[i];
+            array[i]=array[max];
+            array[max]=temp;
+        }
+        System.out.println(Arrays.toString(array));
+        System.out.println(&quot;选择排序结束&quot;);
+    }</code></pre>
+<h2 id="三，插入排序"><a href="#三，插入排序" class="headerlink" title="三，插入排序"></a>三，插入排序</h2><blockquote>
+<p>这个稍微开始难理解了QAQ</p>
+</blockquote>
+<h3 id="思想-2"><a href="#思想-2" class="headerlink" title="思想"></a>思想</h3><p>将无序区的第一个插入到有序区的适当位置<br><img src="https://cdn.jsdelivr.net/gh/fushaolei/img/20200623105659.gif" alt=""></p>
+<h3 id="示例代码-2"><a href="#示例代码-2" class="headerlink" title="示例代码"></a>示例代码</h3><pre><code class="java">    /**
+     * 插入排序
+     */
+    public static void insert_sort(int array[]){
+        System.out.println(&quot;插入排序开始&quot;);
+        int j,temp;
+        for (int i=1;i&lt;array.length;i++){
+            temp=array[i];//选择第一个未排序的元素
+            for(j=i-1;j&gt;=0&amp;&amp;array[j]&lt;temp;j--){
+                //逆序遍历
+                array[j+1]=array[j];//先右移
+            }
+            array[j+1]=temp;
+        }
+        System.out.println(Arrays.toString(array));
+        System.out.println(&quot;插入排序结束&quot;);
+    }</code></pre>
+<h2 id="四，希尔排序"><a href="#四，希尔排序" class="headerlink" title="四，希尔排序"></a>四，希尔排序</h2><blockquote>
+<p>插入排序的优化版</p>
+</blockquote>
+<h3 id="思想-3"><a href="#思想-3" class="headerlink" title="思想"></a>思想</h3><p><strong>按一定的增量分组，进行插入排序</strong></p>
+<blockquote>
+<p>其实就是插入排序更加灵活的实现</p>
+</blockquote>
+<h3 id="示例代码-3"><a href="#示例代码-3" class="headerlink" title="示例代码"></a>示例代码</h3><pre><code class="java">    /**
+     * 希尔排序
+     */
+    public static void shell_sort(int array[]){
+        System.out.println(&quot;希尔排序开始&quot;);
+        int i,j;
+        int n=array.length;
+        for (int d=n/2;d&gt;0;d/=2){
+            for (i=d;i&lt;n;i++){
+                int temp=array[i];
+                for (j=i-d;j&gt;=0&amp;&amp;temp&lt;array[j];j-=d){
+                    array[j+d]=array[j];
+                }
+                array[j+d]=temp;
+            }
+        }
+        System.out.println(Arrays.toString(array));
+        System.out.println(&quot;希尔排序结束&quot;);
+    }</code></pre>
+
+  </div>
+
+</div>
+</div>
+
+
+
+
+    
+      
+<script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.1/build/highlight.min.js"></script>
+
+      <script>hljs.initHighlightingOnLoad();</script>
+    
+  
+</body>
+</html>
