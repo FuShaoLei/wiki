@@ -1,0 +1,63 @@
+
+body {
+  margin: 0;
+  height: 100%;
+  width: 100%;
+}
+
+/* 首页 */
+.index-outer{
+  margin-top: 200px;
+  display: flex;
+  justify-content: center;
+}
+.index-outer,a{
+  text-decoration: none;
+  color: #333;
+}
+.book{
+  font-size: 2em;
+  font-weight: 1000;
+  background-color: #fff;
+  width: 200px;
+  border-bottom: 1px dashed #ddd;
+  margin-bottom: 10px;
+  line-height: 1.8em;
+}
+
+/* 文章 */
+.post-layout{
+ 
+}
+.post-side{
+  position: fixed;
+  top: 0;
+  height: 100%;
+  width: 200px;
+  border-right: 1px dashed #ddd;
+}
+.post-main{
+  padding: 20px;
+  margin-left: 200px;
+  display: flex;
+  justify-content: center;
+}
+.post-content{
+  max-width: 900px;
+}
+ 
+.base{
+  border-bottom: 1px dashed #ddd;
+  padding: 20px;
+
+}
+.base>a{
+  color: #333;
+
+}
+.me{
+  background-color: #EEEEEE;
+}
+.me>a{
+  color: #333;
+}
