@@ -26,7 +26,7 @@ body,p,div,span{
 
 /* 首页 */
 .index-outer{
-  margin-top: 200px;
+  margin-top: 160px;
   display: flex;
   justify-content: center;
 }
@@ -34,15 +34,26 @@ body,p,div,span{
   text-decoration: none;
   color: #333;
 }
+.index-title{
+  text-align: center;
+  font-size: 4em;
+  font-weight: 1000;
+  margin-bottom: 60px;
+}
 .book{
-  font-size: 2em;
+  font-size: 1.5em;
   font-weight: 1000;
   background-color: #fff;
-  width: 200px;
-  border-bottom: 1px dashed #ddd;
+  width: 400px;
+  border: 4px dashed #EEEEEE;
   margin-bottom: 10px;
   line-height: 1.8em;
+  padding: 10px;
 }
+.book:hover{
+  background-color: #ddd;
+}
+
 
 /* 文章 */
 .post-layout{
@@ -53,7 +64,7 @@ body,p,div,span{
   top: 0;
   height: 100%;
   width: 200px;
-  border-right: 1px dashed #ddd;
+  border-right: 4px dashed #ddd;
 }
 .post-main{
   padding: 20px;
@@ -66,9 +77,8 @@ body,p,div,span{
 }
  
 .base{
-  border-bottom: 1px dashed #ddd;
-  padding: 20px;
-  transition: .25s;
+  border-bottom: 4px dashed #ddd;
+  padding: 13px 20px;
   font-weight: 580;
   font-size: 1.1em;
 }
@@ -94,7 +104,7 @@ body,p,div,span{
 .post-fore{
   text-align: center;
   padding-bottom: 20px;
-  border-bottom: 1px dashed #ddd;
+  border-bottom: 4px dashed #ddd;
   margin-bottom: 40px;
 }
 .post-title{
