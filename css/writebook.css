@@ -61,12 +61,19 @@ body,p,div,span{
   transition: all .2s;
 }
 .book:hover{
-  border: 4px solid #FE346E;
-  color: #FE346E;
+  background-color: #333;
+  color: #fff;
 }
 
 
 /* 文章 */
+.toc>ol,li{
+  list-style:disc;
+}
+.toc{
+  font-weight: 1000;
+}
+
 .post-layout{
  
 }
@@ -75,7 +82,7 @@ body,p,div,span{
   top: 0;
   height: 100%;
   width: 200px;
-  border-right: 4px dashed #ddd;
+  border-right: 4px solid #333;
 }
 .post-main{
   padding: 20px;
@@ -88,20 +95,23 @@ body,p,div,span{
 }
  
 .base{
-  border-bottom: 4px dashed #ddd;
+  border-bottom: 4px solid #333;
   padding: 13px 20px;
   font-weight: 580;
   font-size: 1.1em;
+  transition: all .2s;
 }
 .base:hover{
-  background-color: #EEEEEE;
+  background-color: #333;
+  color: #fff;
 }
 .base>a{
   color: #333;
 
 }
 .me{
-  background-color: #EEEEEE;
+  background-color: #333;
+  color: #fff;
 }
 .me>a{
   color: #333;
@@ -115,7 +125,7 @@ body,p,div,span{
 .post-fore{
   text-align: center;
   padding-bottom: 20px;
-  border-bottom: 4px dashed #ddd;
+  border-bottom: 4px solid #333;
   margin-bottom: 40px;
 }
 .post-title{
