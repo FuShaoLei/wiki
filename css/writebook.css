@@ -26,9 +26,10 @@ body,p,div,span{
 
 /* 首页 */
 .index-outer{
-  margin-top: 160px;
+  margin-top: 60px;
   display: flex;
   justify-content: center;
+  margin-bottom: 100px;
 }
 .index-outer,a{
   text-decoration: none;
@@ -40,18 +41,28 @@ body,p,div,span{
   font-weight: 1000;
   margin-bottom: 60px;
 }
+.book-style{
+  max-width: 800px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .book{
-  font-size: 1.5em;
+  font-size: 1.7em;
   font-weight: 1000;
   background-color: #fff;
-  width: 400px;
-  border: 4px dashed #EEEEEE;
+  width: 150px;
+  margin-left: 20px;
+  height: 150px;
+  border: 4px solid #333;
   margin-bottom: 10px;
   line-height: 1.8em;
   padding: 10px;
+  transition: all .2s;
 }
 .book:hover{
-  background-color: #ddd;
+  border: 4px solid #FE346E;
+  color: #FE346E;
 }
 
 
@@ -193,4 +204,23 @@ table > tbody + tbody {
 video {
   display: block;
   margin: auto;
+}
+@media (max-width: 800px){
+  .book-style{
+    max-width: 600px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+@media (max-width: 500px){
+  .book-style{
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+  .book{
+    width: 250px;
+    height: 250px;
+  }
 }
