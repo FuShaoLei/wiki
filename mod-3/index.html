@@ -1,0 +1,230 @@
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>策略模式  Sorryfu</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/fushaolei/img/20200524104925.jpg" type="image/x-icon">
+  
+<link rel="stylesheet" href="/wiki/css/writebook.css">
+
+
+  
+    
+      
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.1.1/styles/vs2015.css">
+
+    
+  
+<meta name="generator" content="Hexo 4.2.1"></head>
+<body>
+
+<div class="post-layout">
+  <div class="post-side">
+ <!-- <div class="post-categories">
+   mod
+ </div> -->
+  
+<div class="post-relative">
+  <a  href="/wiki/" >
+    <div class="base">
+      首页
+    </div>
+  </a>
+  
+  
+    
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+    
+      <a  href="/wiki/mod-0/" >
+      <div class="base">
+        简介
+      </div>
+    </a>
+    
+  
+
+  
+    
+      <a  href="/wiki/mod-1/" >
+      <div class="base">
+        观察者模式
+      </div>
+    </a>
+    
+  
+
+  
+    
+      <a  href="/wiki/mod-2/" >
+      <div class="base">
+        适配器模式
+      </div>
+    </a>
+    
+  
+
+  
+    
+      <a  href="/wiki/mod-3/" >
+      <div class="me base">
+        策略模式
+      </div>
+    </a>
+    
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+    
+  
+
+</div>
+
+  </div>
+
+
+<div class="post-main">
+  <div class="post-content">
+    <div class="post-fore">
+      <h1 class="post-title">策略模式</h1>
+      <section class="post-meta">
+        <time datetime="2020-07-13T14:54:02.000Z">2020年07月13日</time> by <span>Sorryfu</span>
+      </section>
+    </div>
+    <!-- 
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#介绍"><span class="toc-text">介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#实现"><span class="toc-text">实现</span></a></li></ol>
+     -->
+  <h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><blockquote>
+<p>可随时切换算法<br>策略模式定义了<br>一系列的算法，并将每一个算<br>法封装起来，而且使它们还可以相互替换。</p>
+</blockquote>
+<h2 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h2><pre><code class="java">/**
+ * 一，定义一个抽象类
+ */
+public interface IStrategy {
+    public void fighting();
+}</code></pre>
+<pre><code class="java">/**
+ * 二，定义一些具体实现类
+ */
+
+/**
+ * 技能一，冷箭
+ */
+public class Bow implements IStrategy {
+    @Override
+    public void fighting() {
+        System.out.println(&quot;施冷箭&quot;);
+    }
+}
+/**
+ * 技能二，放炮
+ */
+public class Cannon implements IStrategy {
+    @Override
+    public void fighting() {
+        System.out.println(&quot;开炮！&quot;);
+    }
+}
+/**
+ * 技能三，使刀
+ */
+public class Knife implements IStrategy {
+    @Override
+    public void fighting() {
+        System.out.println(&quot;使刀中&quot;);
+    }
+}</code></pre>
+<pre><code class="java">/**
+ * 三，定义环境类
+ */
+public class Context {
+    private IStrategy strategy;
+
+    public Context() {
+    }
+
+    //为的是方便调用，方便转换
+    public void setStrategy(IStrategy strategy) {
+        this.strategy = strategy;
+    }
+    public void fight(){
+        this.strategy.fighting();
+    }
+}</code></pre>
+<pre><code class="java">/**
+ * 测试
+ */
+public class Test {
+    public static void main(String[] args) {
+        Context context=new Context();
+        context.setStrategy(new Bow());
+        context.fight();
+        context.setStrategy(new Cannon());
+        context.fight();
+        context.setStrategy(new Knife());
+        context.fight();
+    }
+}</code></pre>
+
+  </div>
+
+</div>
+</div>
+
+
+
+
+    
+      
+<script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.1/build/highlight.min.js"></script>
+
+      <script>hljs.initHighlightingOnLoad();</script>
+    
+  
+</body>
+</html>

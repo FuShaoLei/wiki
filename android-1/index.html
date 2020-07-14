@@ -1,0 +1,187 @@
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>用户界面基础  Sorryfu</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/fushaolei/img/20200524104925.jpg" type="image/x-icon">
+  
+<link rel="stylesheet" href="/wiki/css/writebook.css">
+
+
+  
+    
+      
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.1.1/styles/vs2015.css">
+
+    
+  
+<meta name="generator" content="Hexo 4.2.1"></head>
+<body>
+
+<div class="post-layout">
+  <div class="post-side">
+ <!-- <div class="post-categories">
+   android
+ </div> -->
+  
+<div class="post-relative">
+  <a  href="/wiki/" >
+    <div class="base">
+      首页
+    </div>
+  </a>
+  
+  
+    
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+    
+      <a  href="/wiki/android-0/" >
+      <div class="base">
+        简介
+      </div>
+    </a>
+    
+  
+
+  
+    
+      <a  href="/wiki/android-1/" >
+      <div class="me base">
+        用户界面基础
+      </div>
+    </a>
+    
+  
+
+  
+    
+      <a  href="/wiki/android-2/" >
+      <div class="base">
+        界面布局
+      </div>
+    </a>
+    
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+    
+      <a  href="/wiki/android-3/" >
+      <div class="base">
+        Listview
+      </div>
+    </a>
+    
+  
+
+</div>
+
+  </div>
+
+
+<div class="post-main">
+  <div class="post-content">
+    <div class="post-fore">
+      <h1 class="post-title">用户界面基础</h1>
+      <section class="post-meta">
+        <time datetime="2020-07-13T14:53:14.000Z">2020年07月13日</time> by <span>Sorryfu</span>
+      </section>
+    </div>
+    <!-- 
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#四大组件的作用"><span class="toc-text">四大组件的作用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MVC模式"><span class="toc-text">MVC模式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#基本概念"><span class="toc-text">基本概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#对应"><span class="toc-text">对应</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#View类及子类"><span class="toc-text">View类及子类</span></a></li></ol>
+     -->
+  <h2 id="四大组件的作用"><a href="#四大组件的作用" class="headerlink" title="四大组件的作用"></a>四大组件的作用</h2><blockquote>
+<p>所有android应用都是由四大组件组成的：Activity，BroadcastReceiver，Service，ContentProvider</p>
+</blockquote>
+<ul>
+<li>Activity：最基本的组件，一个就是一个屏幕，通常都被实现为一个独立的类</li>
+<li>BroadcastReceiver：使用它对外部事件进行过滤，接收并做出响应</li>
+<li>Service：一个服务是具有一个较长生命周期且没有用户界面的程序。</li>
+<li>ContentProvider：使一个应用程序的指定数据集可以提供给其他应用程序。</li>
+</ul>
+<h2 id="MVC模式"><a href="#MVC模式" class="headerlink" title="MVC模式"></a>MVC模式</h2><h3 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h3><ul>
+<li>M：Model：模型层，负责处理数据的加载或者存储</li>
+<li>V：View：视图层，负责界面数据的展示，与用户进行交互</li>
+<li>C：Controller：控制器层，负责逻辑业务的处理，处理用户数据</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/fushaolei/img/20200702093658.png" alt=""></p>
+<h3 id="对应"><a href="#对应" class="headerlink" title="对应"></a>对应</h3><ul>
+<li>Model层对应了android中的数据库啊，文件的操作</li>
+<li>View层对应了android中的XML布局文件</li>
+<li>Controller层对应了Activity</li>
+</ul>
+<p>事实上，Activity中的<code>setContentView</code>方法可以指定对应的布局，然后activity又可以操作数据说明的，这是视图层和控制器层甚至和Model层的结合</p>
+<blockquote>
+<p>这种模式用起来真是混乱+冗余</p>
+</blockquote>
+<h2 id="View类及子类"><a href="#View类及子类" class="headerlink" title="View类及子类"></a>View类及子类</h2><blockquote>
+<p>View控件是界面的最基本的可视单元，是Android视图界面的基类。</p>
+</blockquote>
+<p><img src="https://cdn.jsdelivr.net/gh/fushaolei/img/20200702110528.png" alt=""></p>
+
+  </div>
+
+</div>
+</div>
+
+
+
+
+    
+      
+<script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.1/build/highlight.min.js"></script>
+
+      <script>hljs.initHighlightingOnLoad();</script>
+    
+  
+</body>
+</html>

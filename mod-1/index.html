@@ -1,0 +1,241 @@
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>观察者模式  Sorryfu</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/fushaolei/img/20200524104925.jpg" type="image/x-icon">
+  
+<link rel="stylesheet" href="/wiki/css/writebook.css">
+
+
+  
+    
+      
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.1.1/styles/vs2015.css">
+
+    
+  
+<meta name="generator" content="Hexo 4.2.1"></head>
+<body>
+
+<div class="post-layout">
+  <div class="post-side">
+ <!-- <div class="post-categories">
+   mod
+ </div> -->
+  
+<div class="post-relative">
+  <a  href="/wiki/" >
+    <div class="base">
+      首页
+    </div>
+  </a>
+  
+  
+    
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+    
+      <a  href="/wiki/mod-0/" >
+      <div class="base">
+        简介
+      </div>
+    </a>
+    
+  
+
+  
+    
+      <a  href="/wiki/mod-1/" >
+      <div class="me base">
+        观察者模式
+      </div>
+    </a>
+    
+  
+
+  
+    
+      <a  href="/wiki/mod-2/" >
+      <div class="base">
+        适配器模式
+      </div>
+    </a>
+    
+  
+
+  
+    
+      <a  href="/wiki/mod-3/" >
+      <div class="base">
+        策略模式
+      </div>
+    </a>
+    
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+    
+  
+
+</div>
+
+  </div>
+
+
+<div class="post-main">
+  <div class="post-content">
+    <div class="post-fore">
+      <h1 class="post-title">观察者模式</h1>
+      <section class="post-meta">
+        <time datetime="2020-07-13T14:53:46.000Z">2020年07月13日</time> by <span>Sorryfu</span>
+      </section>
+    </div>
+    <!-- 
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#介绍"><span class="toc-text">介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#实现"><span class="toc-text">实现</span></a></li></ol>
+     -->
+  <blockquote>
+<p>又叫<strong>发布-订阅</strong>模式，我觉得还是这个名字好</p>
+</blockquote>
+<h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><ul>
+<li>背景：某对象发生了变化，需其他对象做出调整</li>
+<li>两个角色：观察者和被观察者</li>
+<li>当被观察者发生变化时，观察者回察到变化，并做出响应</li>
+</ul>
+<p>类比的话 就像微信公众号一样，公众号若发布消息的话，所有订阅者都回收到消息，</p>
+<h2 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h2><p>(A表示订阅者 B表示发布者)</p>
+<ol>
+<li>发布者将所有订阅者装进一个容器里</li>
+<li>发布者发布了某些信息，从容器中得到所有注册过的订阅者，将变化通知他。</li>
+<li>当订阅者不想订阅此发布者时，只需告知发布者，发布者即从容器中把此订阅者删除</li>
+</ol>
+<blockquote>
+<p>下面是小小demo</p>
+</blockquote>
+<pre><code class="java">/**
+ * 发布者，拥有以下几个功能
+ * 1. 添加订阅者
+ * 2. 删除订阅者
+ * 3. 通知所有订阅者更新的信息
+ */
+public class Subject {
+    private List&lt;User&gt; userList=new ArrayList&lt;&gt;();
+
+    public void add(User weixinUser) {
+        userList.add(weixinUser);
+    }
+
+
+    public void delete(User weixinUser) {
+        userList.remove(weixinUser);
+    }
+
+
+    public void notify(String message) {
+        for (User user:userList){//更新消息后 ，循环订阅者list，提醒更新
+            user.update(message);
+        }
+    }
+}
+</code></pre>
+<pre><code class="java">/**
+ * 订阅者
+ */
+public class User {
+    private String name;
+
+    public User(String name) {
+        this.name = name;
+    }
+
+
+    public void update(String message) {
+        System.out.println(name+&quot; &quot;+message);
+    }
+}
+</code></pre>
+<p>测试一下</p>
+<pre><code class="java">public class Test {
+    public static void main(String[] args) {
+        Subject subject=new Subject();
+        User user1=new User(&quot;嘎嘎嘎&quot;);
+        User user2=new User(&quot;咕咕咕&quot;);
+        User user3=new User(&quot;嘻嘻嘻&quot;);
+
+        //添加
+        subject.add(user1);
+        subject.add(user2);
+        subject.add(user3);
+
+        subject.notify(&quot;朕更新啦！&quot;);
+        System.out.println(&quot;===================&quot;);
+        //删除一个订阅者
+        subject.delete(user2);
+        subject.notify(&quot;朕又更新啦！&quot;);
+
+    }
+}
+</code></pre>
+
+  </div>
+
+</div>
+</div>
+
+
+
+
+    
+      
+<script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.1/build/highlight.min.js"></script>
+
+      <script>hljs.initHighlightingOnLoad();</script>
+    
+  
+</body>
+</html>

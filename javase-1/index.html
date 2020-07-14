@@ -1,0 +1,175 @@
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>面向对象  Sorryfu</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/fushaolei/img/20200524104925.jpg" type="image/x-icon">
+  
+<link rel="stylesheet" href="/wiki/css/writebook.css">
+
+
+  
+    
+      
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.1.1/styles/vs2015.css">
+
+    
+  
+<meta name="generator" content="Hexo 4.2.1"></head>
+<body>
+
+<div class="post-layout">
+  <div class="post-side">
+ <!-- <div class="post-categories">
+   javase
+ </div> -->
+  
+<div class="post-relative">
+  <a  href="/wiki/" >
+    <div class="base">
+      首页
+    </div>
+  </a>
+  
+  
+    
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+    
+      <a  href="/wiki/javase-0/" >
+      <div class="base">
+        基础语法
+      </div>
+    </a>
+    
+  
+
+  
+    
+      <a  href="/wiki/javase-1/" >
+      <div class="me base">
+        面向对象
+      </div>
+    </a>
+    
+  
+
+  
+    
+  
+
+</div>
+
+  </div>
+
+
+<div class="post-main">
+  <div class="post-content">
+    <div class="post-fore">
+      <h1 class="post-title">面向对象</h1>
+      <section class="post-meta">
+        <time datetime="2020-07-13T14:54:15.000Z">2020年07月13日</time> by <span>Sorryfu</span>
+      </section>
+    </div>
+    <!-- 
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#基础知识"><span class="toc-text">基础知识</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#封装"><span class="toc-text">封装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#继承"><span class="toc-text">继承</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#多态"><span class="toc-text">多态</span></a></li></ol>
+     -->
+  <blockquote>
+<p>面向对象的大三特性就是封装 继承 多态了，下面逐一进行理解<br>推荐阅读：<a href="https://blog.csdn.net/jianyuerensheng/article/details/51602015" target="_blank" rel="noopener">面向对象编程三大特性——封装、继承、多态</a></p>
+</blockquote>
+<h2 id="基础知识"><a href="#基础知识" class="headerlink" title="基础知识"></a>基础知识</h2><p><strong>面向对象编程</strong>，是一种通过<strong>对象</strong>的方式，把<strong>现实世界映射到计算机模型</strong>的一种编程方法。</p>
+<ul>
+<li>方法重载：指多个方法的方法名相同，但各自的参数不同；</li>
+</ul>
+<h2 id="封装"><a href="#封装" class="headerlink" title="封装"></a>封装</h2><ol>
+<li><p>封装是把一个<strong>对象的属性私有化，同时提供一些可以被外界访问的属性的方法</strong>（例如常见的getter setter方法）</p>
+</li>
+<li><p>特性（好处）：</p>
+<ul>
+<li>实现信息隐藏</li>
+<li>隐藏了具体实现细节</li>
+<li>使某些成员设为私有从而提高了安全性和可靠性。</li>
+</ul>
+</li>
+</ol>
+<h2 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h2><ol>
+<li>继承是指<strong>当A类继承B类时（关键字<code>extends</code>），A类就自动获得B类的所有功能</strong>，体现了代码的复用性。</li>
+<li>但是，<strong>子类无法访问父类的<code>private</code>字段或方法</strong>，这时候只需把<code>private</code>改成<code>protected</code>就好，对于<code>protected</code>而言，它指明就类用户而言，他是<code>private</code>，<strong>但是对于任何继承与此类的子类而言或者其他任何位于同一个包的类而言，他却是可以访问的。</strong></li>
+<li><strong>子类不会继承任何父类的方法</strong>，这是必须用<code>super()</code>（有可能会有参数），来去<strong>调用父类</strong>的构造方法</li>
+<li><strong>向上转型</strong>（这里理解的不是很透彻。。），把一个子类类型安全地变为父类类型的赋值，例如<code>Person p = new Student();//Student/继承自Person，当这样操作时，Student会自动向上转型为Person（这里不太理解。。）</code></li>
+</ol>
+<h2 id="多态"><a href="#多态" class="headerlink" title="多态"></a>多态</h2><ol>
+<li><strong>针对某个类型的方法调用，其真正执行的方法取决于运行时期实际类型的方法</strong></li>
+<li>这个是真滴不太理解。。(╯‵□′)╯︵┻━┻</li>
+</ol>
+
+  </div>
+
+</div>
+</div>
+
+
+
+
+    
+      
+<script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.1/build/highlight.min.js"></script>
+
+      <script>hljs.initHighlightingOnLoad();</script>
+    
+  
+</body>
+</html>

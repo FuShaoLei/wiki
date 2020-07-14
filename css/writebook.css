@@ -3,6 +3,7 @@ body {
   margin: 0;
   height: 100%;
   width: 100%;
+  background-color: #F7F6F3;
 }
 body,p,div,span{
   font-family: 'Century Gothic';
@@ -44,27 +45,34 @@ body,p,div,span{
 .book-style{
   max-width: 800px;
   display: flex;
+  flex-direction: column;
   flex-wrap: wrap;
 }
 
 .book{
-  font-size: 1.7em;
+  font-size: 2em;
   font-weight: 1000;
-  background-color: #fff;
-  width: 150px;
   margin-left: 20px;
-  height: 150px;
-  border: 4px solid #333;
   margin-bottom: 10px;
   line-height: 1.8em;
   padding: 10px;
   transition: all .2s;
 }
-.book:hover{
-  background-color: #333;
-  color: #fff;
+.hover-link{
+  position: relative;
 }
-
+.hover-link:after{
+  content: "";
+  position: absolute;
+  top: 90%;
+  left: -.1em;
+  right: -.1em;
+  bottom: -.1em ;
+  background-color: #E8E7E4;
+  transition: all .25s;
+}
+ 
+ 
 
 /* 文章 */
 .toc>ol,li{
@@ -82,36 +90,38 @@ body,p,div,span{
   top: 0;
   height: 100%;
   width: 200px;
-  border-right: 4px solid #333;
+  background-color: #F7F6F3;
 }
 .post-main{
+  background-color: #fff;
   padding: 20px;
   margin-left: 200px;
   display: flex;
   justify-content: center;
 }
 .post-content{
-  max-width: 800px;
+  
+  max-width: 1000px;
 }
- 
+/* .post-relative{
+  padding-top: 20px;
+} */
 .base{
-  border-bottom: 4px solid #333;
-  padding: 13px 20px;
-  font-weight: 580;
-  font-size: 1.1em;
+  padding: 6px 23px;
+  font-size: 0.9em;
   transition: all .2s;
+  color: #6C6A65;
+  font-weight: 1000;
 }
 .base:hover{
-  background-color: #333;
-  color: #fff;
+  background-color: #E8E7E4;
 }
 .base>a{
   color: #333;
-
 }
 .me{
-  background-color: #333;
-  color: #fff;
+  background-color: #E8E7E4;
+  color: #333;
 }
 .me>a{
   color: #333;
@@ -119,18 +129,16 @@ body,p,div,span{
 /* 文章主体 */
 .post-content{
   line-height: 1.8em;
-  margin-top: 70px;
+  margin-top: 60px;
   margin-bottom: 100px;
 }
 .post-fore{
-  text-align: center;
   padding-bottom: 20px;
-  border-bottom: 4px solid #333;
   margin-bottom: 40px;
 }
 .post-title{
-  font-size: 3.5em;
-  padding-bottom: 20px;
+  font-size: 2.6em;
+  padding-bottom: 10px;
 }
 
 
@@ -221,6 +229,9 @@ video {
     display: flex;
     flex-wrap: wrap;
   }
+  .post-content{
+    max-width: 500px;
+  }
 }
 @media (max-width: 500px){
   .book-style{
@@ -228,9 +239,5 @@ video {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-  }
-  .book{
-    width: 250px;
-    height: 250px;
   }
 }
